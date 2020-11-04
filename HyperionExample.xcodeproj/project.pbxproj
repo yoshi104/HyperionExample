@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DAEE21CD24F359E95497CEE /* Pods_HyperionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BBA6C6EDB1E67E3688FAA9 /* Pods_HyperionExample.framework */; };
 		FFB0152B2552EE92008F6A39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0152A2552EE92008F6A39 /* AppDelegate.swift */; };
 		FFB0152D2552EE92008F6A39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0152C2552EE92008F6A39 /* SceneDelegate.swift */; };
 		FFB0152F2552EE92008F6A39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0152E2552EE92008F6A39 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047172F96AC28EA2607AA423 /* Pods-HyperionExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperionExample.release.xcconfig"; path = "Target Support Files/Pods-HyperionExample/Pods-HyperionExample.release.xcconfig"; sourceTree = "<group>"; };
+		A47DBF619EB0643C1F3403E8 /* Pods-HyperionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperionExample.debug.xcconfig"; path = "Target Support Files/Pods-HyperionExample/Pods-HyperionExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A9BBA6C6EDB1E67E3688FAA9 /* Pods_HyperionExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperionExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB015272552EE92008F6A39 /* HyperionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB0152A2552EE92008F6A39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFB0152C2552EE92008F6A39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DAEE21CD24F359E95497CEE /* Pods_HyperionExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20EF54EAC4CEDC5D62F15C8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A47DBF619EB0643C1F3403E8 /* Pods-HyperionExample.debug.xcconfig */,
+				047172F96AC28EA2607AA423 /* Pods-HyperionExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6273C428EAF33ACBFBECA741 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9BBA6C6EDB1E67E3688FAA9 /* Pods_HyperionExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FFB0151E2552EE92008F6A39 = {
 			isa = PBXGroup;
 			children = (
 				FFB015292552EE92008F6A39 /* HyperionExample */,
 				FFB015282552EE92008F6A39 /* Products */,
+				20EF54EAC4CEDC5D62F15C8A /* Pods */,
+				6273C428EAF33ACBFBECA741 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFB0153B2552EE98008F6A39 /* Build configuration list for PBXNativeTarget "HyperionExample" */;
 			buildPhases = (
+				5CCE0E4E2FC3DF16D4C743EF /* [CP] Check Pods Manifest.lock */,
 				FFB015232552EE92008F6A39 /* Sources */,
 				FFB015242552EE92008F6A39 /* Frameworks */,
 				FFB015252552EE92008F6A39 /* Resources */,
+				AF5C128084C3F43E59665B38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +157,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CCE0E4E2FC3DF16D4C743EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HyperionExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF5C128084C3F43E59665B38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyperionExample/Pods-HyperionExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HyperionExample/Pods-HyperionExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HyperionExample/Pods-HyperionExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFB015232552EE92008F6A39 /* Sources */ = {
@@ -283,12 +351,14 @@
 		};
 		FFB0153C2552EE98008F6A39 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A47DBF619EB0643C1F3403E8 /* Pods-HyperionExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ABMFV245C7;
 				INFOPLIST_FILE = HyperionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +372,14 @@
 		};
 		FFB0153D2552EE98008F6A39 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 047172F96AC28EA2607AA423 /* Pods-HyperionExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ABMFV245C7;
 				INFOPLIST_FILE = HyperionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
